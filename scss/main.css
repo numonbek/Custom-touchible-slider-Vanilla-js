@@ -1,0 +1,253 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--color--default);
+}
+
+body {
+  background-color: var(--white);
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: var(--max-width);
+  min-height: var(--min-height);
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fw--bold {
+  font-weight: var(--fw-bold);
+}
+
+.title {
+  font-size: var(--l);
+}
+
+.fontStyle--h2 {
+  font-size: var(--s);
+  line-height: 22px;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: Bold;
+  font-weight: 700;
+  src: url("../static/fonts/Roboto/Roboto-Bold.woff2") format("woff2"), url("../static/fonts/Roboto/Roboto-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: Medium;
+  font-weight: 500;
+  src: url("../static/fonts/Roboto/Roboto-Medium.woff2") format("woff2"), url("../static/fonts/Roboto/Roboto-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: Regular;
+  font-weight: 400;
+  src: url("../static/fonts/Roboto/Roboto-Regular.woff2") format("woff2"), url("../static/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+}
+
+@media screen and (max-width: 800px) {
+  .dots {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    display: block !important;
+    text-align: center;
+  }
+
+  .components {
+    padding-top: 40px !important;
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+
+  .buttons {
+    margin-left: 0 !important;
+  }
+
+  .carousel {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+}
+
+:root {
+  /* Fonts */
+  --font: 'Roboto', sans-serif;
+  --s: 0.75rem;
+  --m: 1rem;
+  --l: 3.125rem;
+  --fw-bold: 700;
+  --fw-normal: 400;
+  /* Sizes */
+  --max-width: 90rem;
+  --min-height: 50rem;
+  --max-width-content: 80.556%;
+  --btn-width: 3.75rem;
+  --btn-height: 3.75rem;
+  /* Colors */
+  --black: #000;
+  --white: #fff;
+  --color--default: #527CCD;
+  --color--border: #C8D9FB;
+}
+
+/* Components */
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--btn-width);
+  height: var(--btn-height);
+  border: 1px solid var(--color--border);
+  cursor: pointer;
+}
+
+.btn.next {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.btn:active,
+.btn .prev,
+.btn .next {
+  background-color: var(--color--border);
+}
+
+.btn:active path,
+.btn .prev path,
+.btn .next path {
+  stroke: var(--white);
+}
+
+.card__block div:not(:first-child) {
+  padding-top: 0.625rem;
+}
+
+.card__photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card__photo img {
+  width: 220px;
+  height: 160px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.components {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  padding-left: 10px;
+}
+
+.dots {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+  grid-template-columns: repeat(10, 1fr);
+  max-width: 360px;
+  width: 100%;
+}
+
+.dot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color--border);
+}
+
+.buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-left: 2.5rem;
+}
+
+/* carousel */
+.carousel-wrapper {
+  position: relative;
+  width: inherit;
+  height: 420px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.carousel {
+  position: absolute;
+  left: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 40px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.carousel .slide {
+  max-width: 260px;
+  padding: 1.125rem;
+  border: 1px solid var(--color--border);
+}
+
+/*# sourceMappingURL=main.css.map */

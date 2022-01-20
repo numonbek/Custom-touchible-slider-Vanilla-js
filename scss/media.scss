@@ -1,0 +1,22 @@
+@media screen and (max-width: 800px) {
+    .dots{
+        display: none !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .header{
+        display: block !important;
+        text-align: center;
+    }
+    .components{
+        padding-top: 40px !important;
+        justify-content: center !important;
+    }
+    
+    .buttons{
+        margin-left:0 !important;
+    }
+    .carousel{
+        justify-content: center !important;
+    }
+}

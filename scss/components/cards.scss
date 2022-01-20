@@ -1,0 +1,14 @@
+.card{
+    &__block{
+        & div:not(:first-child){
+            padding-top: 0.625rem;
+        }
+    }
+    &__photo{
+        display: flex;
+        & img{
+            width: 220px;
+            height: 160px;
+        }
+    }
+}
