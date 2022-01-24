@@ -8,7 +8,7 @@ let outerB = outer.getBoundingClientRect();
 let innerB = inner.getBoundingClientRect();
 let n = 0;
 let progressId = null;
-inner.style.transition = 'all 1s ease';
+inner.style.transition = 'all 1.5s ease';
 
 function startSlide() {
   progressId = setInterval(() => {
@@ -21,7 +21,7 @@ function startSlide() {
     } else {
       next.click();
     }
-  }, 1000);
+  }, 1500);
 }
 function setTimeSlide() {
   prev.addEventListener('mouseup', startSlide);

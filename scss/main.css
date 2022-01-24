@@ -248,6 +248,11 @@ ul {
   max-width: 260px;
   padding: 1.125rem;
   border: 1px solid var(--color--border);
+
+}
+
+.slide {
+  transition: all 0.9s ease;
 }
 
 /*# sourceMappingURL=main.css.map */
