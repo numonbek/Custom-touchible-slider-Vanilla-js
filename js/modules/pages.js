@@ -4,8 +4,6 @@ let n = 0;
 
 function pages() {
   content.forEach((item, index) => {
-    console.log(item);
-    console.log(n);
     item.insertAdjacentHTML(
       'beforeend',
       ` <div class="card">

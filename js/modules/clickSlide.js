@@ -7,8 +7,40 @@ const dot = document.querySelectorAll('.dot');
 let outerB = outer.getBoundingClientRect();
 let innerB = inner.getBoundingClientRect();
 let n = 0;
+let progressId = null;
+inner.style.transition = 'all 1s ease';
+
+function startSlide() {
+  progressId = setInterval(() => {
+    if (n == slide.length - 1) {
+      n = 0;
+      inner.style.left = '0';
+      dot.forEach((item) => (item.style.backgroundColor = '#C8D9FB'));
+      dot[n].style.backgroundColor = '#527CCD';
+      slide[n].style.borderColor = '#527CCD';
+    } else {
+      next.click();
+    }
+  }, 1000);
+}
+function setTimeSlide() {
+  prev.addEventListener('mouseup', startSlide);
+  next.addEventListener('mouseup', startSlide);
+  outer.addEventListener('mouseup', startSlide);
+}
+function clearTimeSlide() {
+  prev.addEventListener('mousedown', () => clearInterval(progressId));
+  next.addEventListener('mousedown', () => clearInterval(progressId));
+  outer.addEventListener('mousedown', () => clearInterval(progressId));
+}
+
+// console.log('sd', setInt);
 
 function clickSlide() {
+  startSlide();
+  // setTimeSlide();
+  setTimeSlide();
+  clearTimeSlide();
   slide[n].style.borderColor = '#527CCD';
   dot[n].style.backgroundColor = '#527CCD';
 
@@ -24,6 +56,7 @@ function clickSlide() {
         slide[n].style.borderColor = '#527CCD';
       } else {
         n = slide.length - 1;
+        // inner.style.transition = 'none';
         slide[n].style.borderColor = '#527CCD';
       }
     }

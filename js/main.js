@@ -5,7 +5,7 @@ import { clickSlide } from './modules/clickSlide.js';
 
 window.addEventListener('DOMContentLoaded', (e) => {
   pages();
-  touchSlide();
   clickSlide();
+  touchSlide();
   // habrSlide();
 });

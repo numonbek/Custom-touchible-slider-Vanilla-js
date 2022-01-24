@@ -12,6 +12,7 @@ function touchSlide() {
     pressed = true;
     startX = e.offsetX - innerSlider.offsetLeft;
     slider.style.cursor = 'grabbing';
+    innerSlider.style.transition = 'none';
   });
 
   slider.addEventListener('mouseenter', (e) => {
@@ -24,6 +25,7 @@ function touchSlide() {
 
   window.addEventListener('mouseup', (e) => {
     pressed = false;
+    innerSlider.style.transition = 'all 1s ease';
   });
 
   slider.addEventListener('mousemove', (e) => {
@@ -31,8 +33,6 @@ function touchSlide() {
     e.preventDefault();
 
     x = e.offsetX;
-    console.log('offsetleft', innerSlider.offsetLeft);
-    console.log('offsetX', e.offsetX);
 
     innerSlider.style.left = `${x - startX}px`;
 
